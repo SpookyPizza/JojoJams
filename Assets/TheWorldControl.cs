@@ -29,5 +29,14 @@ public class TheWorldControl : MonoBehaviour
         {
             rb.velocity = new Vector2(0, 0);
         }
+
+        if (transform.position.y < -4)
+        {
+            transform.position = new Vector3(transform.position.x, -4, transform.position.z);
+        }
+        if (transform.position.y > 4)
+        {
+            transform.position = new Vector3(transform.position.x, 4, transform.position.z);
+        }
     }
 }
