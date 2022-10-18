@@ -19,7 +19,13 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        float angle = AngleBetweenPoints(this.transform.position, new Vector2(rb.velocity.x, rb.velocity.y) *2);
+        this.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle + 180));
+    }
+
+    float AngleBetweenPoints(Vector2 a, Vector2 b)
+    {
+        return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -40,5 +46,19 @@ public class Ball : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, -rb.velocity.y);
         }
+        if (col.gameObject.tag == "GoalJotaro")
+        {
+            this.transform.position = new Vector2(0, 0);
+            rb.velocity = Vector2.zero;
+            rb.velocity = new Vector2(-speed / 1.5f, 0);
+        }
+        if (col.gameObject.tag == "GoalDio")
+        {
+            this.transform.position = new Vector2(0, 0);
+            rb.velocity = Vector2.zero;
+            rb.velocity = new Vector2(speed / 1.5f, 0);
+        }
     }
+
+    
 }
