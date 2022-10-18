@@ -8,6 +8,7 @@ public class Ball : MonoBehaviour
     public float speed;
     public GameObject starPlatinum;
     public GameObject theWorld;
+    public Transform la_ou_se_trouve_la_boule;
 
     // Start is called before the first frame update
     void Start()
@@ -40,5 +41,6 @@ public class Ball : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, -rb.velocity.y);
         }
+
     }
 }
