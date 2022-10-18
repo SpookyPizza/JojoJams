@@ -46,5 +46,19 @@ public class Ball : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, -rb.velocity.y);
         }
+        if (col.gameObject.tag == "GoalJotaro")
+        {
+            this.transform.position = new Vector2(0, 0);
+            rb.velocity = Vector2.zero;
+            rb.velocity = new Vector2(-speed / 1.5f, 0);
+        }
+        if (col.gameObject.tag == "GoalDio")
+        {
+            this.transform.position = new Vector2(0, 0);
+            rb.velocity = Vector2.zero;
+            rb.velocity = new Vector2(speed / 1.5f, 0);
+        }
     }
+
+    
 }
