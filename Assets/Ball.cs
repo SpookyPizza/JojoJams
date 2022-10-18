@@ -19,7 +19,13 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        float angle = AngleBetweenPoints(this.transform.position, new Vector2(rb.velocity.x, rb.velocity.y) *2);
+        this.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle + 180));
+    }
+
+    float AngleBetweenPoints(Vector2 a, Vector2 b)
+    {
+        return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
     }
 
     void OnTriggerEnter2D(Collider2D col)
