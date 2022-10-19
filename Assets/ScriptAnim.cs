@@ -8,7 +8,8 @@ public class ScriptAnim : MonoBehaviour
 
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
+
     }
 
     void Update()
@@ -18,12 +19,17 @@ public class ScriptAnim : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        anim.SetBool("_IsTrigger", true);
+        if (collision.tag == "Ball")
+        {
+            anim.SetBool("_IsTrigger", true);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        anim.SetBool("_IsTrigger", false);
-
+        if (collision.tag == "Ball")
+        {
+            anim.SetBool("_IsTrigger", false);
+        }
     }
 }
