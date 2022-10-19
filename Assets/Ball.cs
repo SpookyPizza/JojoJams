@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
+    
     private Rigidbody2D rb;
     public float speed;
     public GameObject starPlatinum;
@@ -32,6 +33,7 @@ public class Ball : MonoBehaviour
     {
         if (col.gameObject.tag == "StarPlatinum")
         {
+            
             float difference = this.transform.position.y - starPlatinum.transform.position.y;
             float angle = difference * (Mathf.PI / (1.25f * 2.7f));
             rb.velocity = new Vector2(Mathf.Cos(angle) * speed, Mathf.Sin(angle) * speed);
