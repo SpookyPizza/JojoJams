@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PV_dio : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public Animator nb_pv;
         {
             //fin du match 
             Debug.Log("Victoire de Jotaro");
+            SceneManager.LoadScene("victoire_jojo");
         }
         if (point_de_vie_dio == 2)
         {
