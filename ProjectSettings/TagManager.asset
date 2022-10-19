@@ -11,6 +11,7 @@ TagManager:
   - GoalDio
   - limite
   - damage
+  - Ball
   layers:
   - Default
   - TransparentFX
