@@ -7,6 +7,8 @@ TagManager:
   - TheWorld
   - StarPlatinum
   - Wall
+  - GoalJotaro
+  - GoalDio
   - limite
   - damage
   layers:
