@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class ScriptAnim : MonoBehaviour
 {
-    private Animator anim;
+    public Animator anim;
+    public GameObject stand_rush;
 
     void Start()
     {
-        anim = GetComponent<Animator>();
+        anim = stand_rush.GetComponent<Animator>();
 
     }
 
