@@ -552,6 +552,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fed39809398a7a24aafab7e63f0d5219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 879157403}
+  stand_rush: {fileID: 879157399}
 --- !u!82 &623280754
 AudioSource:
   m_ObjectHideFlags: 0
@@ -996,7 +998,7 @@ GameObject:
   - component: {fileID: 879157402}
   - component: {fileID: 879157401}
   m_Layer: 0
-  m_Name: Trigger
+  m_Name: Trigger_jojo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1024,11 +1026,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 879157399}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fed39809398a7a24aafab7e63f0d5219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  stand_rush: {fileID: 0}
 --- !u!212 &879157402
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1108,7 +1112,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 879157399}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -1321,6 +1325,7 @@ GameObject:
   - component: {fileID: 1418033318}
   - component: {fileID: 1418033323}
   - component: {fileID: 1418033324}
+  - component: {fileID: 1418033325}
   m_Layer: 0
   m_Name: The World
   m_TagString: TheWorld
@@ -1555,6 +1560,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1418033325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418033317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fed39809398a7a24aafab7e63f0d5219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 1845841805}
+  stand_rush: {fileID: 1845841801}
 --- !u!1 &1682022821
 GameObject:
   m_ObjectHideFlags: 0
@@ -1818,7 +1837,7 @@ GameObject:
   - component: {fileID: 1845841804}
   - component: {fileID: 1845841803}
   m_Layer: 0
-  m_Name: Trigger (1)
+  m_Name: Trigger_dio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1846,11 +1865,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1845841801}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fed39809398a7a24aafab7e63f0d5219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  stand_rush: {fileID: 0}
 --- !u!212 &1845841804
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1930,7 +1951,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1845841801}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
