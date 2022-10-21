@@ -7,9 +7,11 @@ public class PV_dio : MonoBehaviour
 {
     public SpriteRenderer sprite;
 
+
+    public AudioSource audioSource;
+    public AudioClip sound;
    
-    
-public int point_de_vie_dio;
+    public int point_de_vie_dio;
 public BoxCollider2D collider_de_dio;
 public BoxCollider2D collider_de_la_boule;
 public Animator nb_pv;
@@ -26,7 +28,11 @@ public SpriteRenderer Dio_red;
         if (collider_de_la_boule.gameObject.tag == "Ball")
         {
             StartCoroutine(FlashRed());
+            audioSource.PlayOneShot(sound);
         }
+        
+            
+        
         point_de_vie_dio -= 1;
         anim_dmg.SetBool("win_jojo", true);
         StartCoroutine(anim_damages());

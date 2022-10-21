@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 public class PV_Jotaro : MonoBehaviour
 {
     public SpriteRenderer sprite;
+    public AudioSource audioSource;
+    public AudioClip sound;
+
+   
     public int point_de_vie_jojo;
 public BoxCollider2D collider_de_jojo;
 public BoxCollider2D collider_de_la_boule;
@@ -23,6 +27,7 @@ public SpriteRenderer Jotaro_red;
         if (collider_de_la_boule.gameObject.tag == "Ball")
         {
             StartCoroutine(FlashRed());
+            audioSource.PlayOneShot(sound);
         }
         point_de_vie_jojo -= 1;
         anim_dmg.SetBool("win_dio", true);
