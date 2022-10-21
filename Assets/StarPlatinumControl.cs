@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class StarPlatinumControl : MonoBehaviour
 {
+    
+    public AudioSource audioSource;
+    public AudioClip sound;
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Ball")
+        {
+            audioSource.PlayOneShot(sound);
+        }
+    }
     private Rigidbody2D rb;
     private Transform transform;
     public float speed;
@@ -12,15 +22,19 @@ public class StarPlatinumControl : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         transform = GetComponent<Transform>();
+        
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetKey(KeyCode.Z) && transform.position.y < 4)
         {
             rb.velocity = new Vector2(0, speed);
         }
+        
         else if (Input.GetKey(KeyCode.S) && transform.position.y > -4)
         {
             rb.velocity = new Vector2(0, -speed);

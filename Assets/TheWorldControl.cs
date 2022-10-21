@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class TheWorldControl : MonoBehaviour
 {
+    public AudioSource audioSource;
+    public AudioClip sound;
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Ball")
+        {
+            audioSource.PlayOneShot(sound);
+        }
+    }
     private Rigidbody2D rb;
     private Transform transform;
     public float speed;
