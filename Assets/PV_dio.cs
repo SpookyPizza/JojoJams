@@ -5,11 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class PV_dio : MonoBehaviour
 {
-public int point_de_vie_dio;
+    public SpriteRenderer sprite;
+
+
+    public AudioSource audioSource;
+    public AudioClip sound;
+   
+    public int point_de_vie_dio;
 public BoxCollider2D collider_de_dio;
 public BoxCollider2D collider_de_la_boule;
 public Animator nb_pv;
 public Animator anim_dmg;
+public SpriteRenderer Dio_red;
 
     void Start()
     {
@@ -18,6 +25,14 @@ public Animator anim_dmg;
 
     void OnTriggerEnter2D(Collider2D collider_de_la_boule)
     {
+        if (collider_de_la_boule.gameObject.tag == "Ball")
+        {
+            StartCoroutine(FlashRed());
+            audioSource.PlayOneShot(sound);
+        }
+        
+            
+        
         point_de_vie_dio -= 1;
         anim_dmg.SetBool("win_jojo", true);
         StartCoroutine(anim_damages());
@@ -36,6 +51,13 @@ public Animator anim_dmg;
         {
             nb_pv.SetInteger("valeur_pv_dio", 1);
         }
+    }
+    public IEnumerator FlashRed()
+    {
+        Debug.Log("flashmevoila");
+        Dio_red.color = Color.red;
+        yield return new WaitForSeconds(0.5f);
+        Dio_red.color = Color.white;
     }
 
     IEnumerator anim_damages()
