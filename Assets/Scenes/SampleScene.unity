@@ -299,11 +299,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 538bf0a664038494bb3556caf806757e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
   point_de_vie_jojo: 0
   collider_de_jojo: {fileID: 181381626}
   collider_de_la_boule: {fileID: 2100645799}
   nb_pv: {fileID: 681512581}
   anim_dmg: {fileID: 2128142698}
+  Jotaro_red: {fileID: 951990063}
 --- !u!1 &302561207
 GameObject:
   m_ObjectHideFlags: 0
@@ -876,11 +878,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97fd3fe12f7103240a2f492c058417d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
   point_de_vie_dio: 0
   collider_de_dio: {fileID: 783535495}
   collider_de_la_boule: {fileID: 2100645799}
   nb_pv: {fileID: 43711845}
   anim_dmg: {fileID: 951990065}
+  Dio_red: {fileID: 2128142696}
 --- !u!1 &811985621
 GameObject:
   m_ObjectHideFlags: 0
