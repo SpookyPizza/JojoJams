@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class PV_Jotaro : MonoBehaviour
 {
-public int point_de_vie_jojo;
+    public SpriteRenderer sprite;
+    public int point_de_vie_jojo;
 public BoxCollider2D collider_de_jojo;
 public BoxCollider2D collider_de_la_boule;
 public Animator nb_pv;
 public Animator anim_dmg;
+public SpriteRenderer Jotaro_red;
 
     void Start()
     {
@@ -18,6 +20,10 @@ public Animator anim_dmg;
 
     void OnTriggerEnter2D(Collider2D collider_de_la_boule)
     {
+        if (collider_de_la_boule.gameObject.tag == "Ball")
+        {
+            StartCoroutine(FlashRed());
+        }
         point_de_vie_jojo -= 1;
         anim_dmg.SetBool("win_dio", true);
         StartCoroutine(anim_damages());
@@ -37,7 +43,14 @@ public Animator anim_dmg;
             nb_pv.SetInteger("valeur_pv_jojo", 1);
         }
     }
-    
+    public IEnumerator FlashRed()
+    {
+        Debug.Log("flashmevoila");
+        Jotaro_red.color = Color.red;
+        yield return new WaitForSeconds(0.5f);
+        Jotaro_red.color = Color.white;
+    }
+
     IEnumerator anim_damages()
     {
         Debug.Log("j'attend");
